@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Arduino IDE
+Exec= ~/Documents/Arduino/squashfs-root/AppRun
+Icon=~/Documents/Arduino/squashfs-root/resources/app/resources/icons/512x512.png
+Type=Application
+Terminal=false
+Categories=Utility;
+
