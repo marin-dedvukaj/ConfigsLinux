@@ -1,0 +1,44 @@
+#!/usr/bin/env bash 
+
+# Check if script is run as root
+if [ "$EUID" -ne 0 ]; then
+  echo "Please run as root (with sudo)."
+  exit
+fi
+
+# Update package manager 
+apt update -y
+
+# Install desired packages (you can remove or add packages as you desire marin djali)
+apt install -y\
+  nvim\
+  i3\
+  htop\
+  python3\
+  python3.venv\
+  python3.pip\
+  visualStudioCode\
+  TLauncher\
+  Godot\
+  default-jdk\
+  gcc\
+  g++\
+  make\
+  cmake\
+  git\
+  curl\
+  wget\
+  unzip\
+  zip\
+  rar\
+  unrar\
+  tar\
+  gzip\
+  bzip2\
+  7z\
+  p7zip\
+  appImageLauncher\
+  build-essential\
+
+# Output a message indicating the installation is complete
+echo "Installation complete."
