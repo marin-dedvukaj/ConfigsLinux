@@ -1,8 +1,7 @@
 [Desktop Entry]
-Name=Arduino IDE
-Exec= ~/Documents/Arduino/squashfs-root/AppRun
-Icon=~/Documents/Arduino/squashfs-root/resources/app/resources/icons/512x512.png
 Type=Application
+Name=Arduino IDE
+Exec=/home/al/Documents/ArduinoIDEapp/Arduino-ide.AppImage
+Comment=launching Arduino IDE
 Terminal=false
-Categories=Utility;
-
+Categories=Development;IDE;

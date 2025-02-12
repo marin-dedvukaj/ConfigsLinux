@@ -1,7 +1,9 @@
 [Desktop Entry]
 Type=Application
+
 Name=Godot
-Comment=Game making engine
-Exec=/home/al/.local/share/applications/Godot/Godot_v4.3-stable_linux.x86_64
+Exec=/home/al/Documents/GodotApp/Godot_v4.3-stable_linux.x86_64
 Terminal=false
-Categories=Development,Game,IDE;
+Comment=Starting Godot
+
+Categories=Development;IDE;Game;

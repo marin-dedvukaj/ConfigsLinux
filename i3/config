@@ -9,7 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.	
@@ -25,8 +25,8 @@ exec --no-startup-id dex --autostart --environment i3
 
 #Startup applications
 exec --no-startup-id feh --bg-scale ~/Documents/wall.jpg
-
-# The combination of xss-lock, nm-applet and pactl is a popular choice, so
+exec --no-startup-id /home/al/Documents/picom.sh
+#The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
@@ -49,10 +49,11 @@ floating_modifier $mod
 
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
-tiling_drag modifier titlebar
+#tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec gnome-terminal --hide-menubar
+bindsym $mod+Shift+Return exec --no-startup-id gnome-terminal --command="sudo bash"
 
 # kill focused window
 bindsym $mod+q kill
@@ -158,7 +159,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-
+bindsym $mod+Shift+Delete "exit"
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -186,9 +187,29 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Remove title bars but keep window borders
+for_window [class=".*"] border pixel 2
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
+bar{
         status_command i3status
+	font pango:Ubuntu Mono 14
+
+
+	colors {
+        	background #1a1a1a
+        	statusline #ffffff
+	        separator  #000000
+
+        	focused_workspace  #4C7899 #285577 #ffffff
+        	active_workspace  #333333 #5f676a #ffffff
+        	inactive_workspace #333333 #222222 #888888
+        	urgent_workspace   #2f343a #900000 #ffffff
 
 	}
+	workspace_buttons yes
+	tray_output primary
+
+
+}

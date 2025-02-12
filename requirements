@@ -11,15 +11,12 @@ apt update -y
 
 # Install desired packages (you can remove or add packages as you desire marin djali)
 apt install -y\
-  nvim\
+  neovim\
   i3\
   htop\
   python3\
   python3.venv\
   python3.pip\
-  visualStudioCode\
-  TLauncher\
-  Godot\
   default-jdk\
   gcc\
   g++\
@@ -39,7 +36,7 @@ apt install -y\
   p7zip\
   appImageLauncher\
   build-essential\
-
+  
 # Output a message indicating the installation is complete
 echo "Installation complete."
 
